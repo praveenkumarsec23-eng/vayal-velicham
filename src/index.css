@@ -2,41 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Digital Krishi Officer Design System - Agricultural Theme
+Colors, gradients, fonts, animations for Malayalam farming app
+All colors MUST be HSL for consistent theming.
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Malayalam:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
+    /* Agricultural Color Palette */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 145 8% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 145 8% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 145 8% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Green Agricultural Primary - Kerala's lush fields */
+    --primary: 145 63% 42%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 145 63% 55%;
+    --primary-dark: 145 63% 35%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Earth Secondary - Rich soil tones */
+    --secondary: 38 32% 92%;
+    --secondary-foreground: 145 8% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 38 32% 92%;
+    --muted-foreground: 145 4% 46%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 38 32% 92%;
+    --accent-foreground: 145 8% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Warning & Success for Agricultural Advisories */
+    --warning: 45 93% 47%;
+    --warning-foreground: 0 0% 98%;
+    
+    --success: 145 63% 42%;
+    --success-foreground: 0 0% 98%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 38 20% 88%;
+    --input: 38 20% 88%;
+    --ring: 145 63% 42%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
+
+    /* Agricultural Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-hero: linear-gradient(135deg, hsl(145 63% 42%), hsl(120 45% 35%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(38 32% 98%));
+    
+    /* Shadows for depth */
+    --shadow-soft: 0 4px 20px hsl(145 30% 15% / 0.08);
+    --shadow-card: 0 8px 32px hsl(145 30% 15% / 0.12);
+    --shadow-hero: 0 20px 60px hsl(145 30% 15% / 0.15);
+    
+    /* Agricultural-themed colors */
+    --crop-healthy: 120 70% 50%;
+    --crop-warning: 40 90% 55%;
+    --crop-disease: 15 85% 55%;
+    --weather-sun: 45 100% 60%;
+    --weather-rain: 220 70% 55%;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,33 +88,40 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark Mode - Night farming theme */
+    --background: 145 12% 8%;
+    --foreground: 38 20% 92%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 145 12% 10%;
+    --card-foreground: 38 20% 92%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 145 12% 10%;
+    --popover-foreground: 38 20% 92%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 145 63% 55%;
+    --primary-foreground: 145 12% 8%;
+    --primary-glow: 145 63% 65%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 145 8% 15%;
+    --secondary-foreground: 38 20% 92%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 145 8% 15%;
+    --muted-foreground: 145 4% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 145 8% 15%;
+    --accent-foreground: 38 20% 92%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --warning: 45 93% 60%;
+    --success: 145 63% 55%;
+    --destructive: 0 84% 65%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 145 8% 18%;
+    --input: 145 8% 18%;
+    --ring: 145 63% 55%;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-hero: linear-gradient(135deg, hsl(145 63% 35%), hsl(120 45% 25%));
+    --gradient-card: linear-gradient(145deg, hsl(145 12% 10%), hsl(145 8% 12%));
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +139,63 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
+
+  /* Malayalam Typography */
+  .font-malayalam {
+    font-family: 'Noto Sans Malayalam', 'Inter', sans-serif;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Agricultural animations */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .animate-bounce-gentle {
+    animation: bounceGentle 2s ease-in-out infinite;
+  }
+}
+
+@layer components {
+  .agricultural-card {
+    @apply bg-gradient-to-br from-card to-secondary/20 backdrop-blur-sm border border-border/50;
+    box-shadow: var(--shadow-card);
+  }
+
+  .hero-button {
+    @apply bg-gradient-to-r from-primary to-primary-glow text-primary-foreground font-medium rounded-2xl px-6 py-3;
+    @apply shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105;
+    @apply border border-primary/20 backdrop-blur-sm;
+  }
+
+  .context-chip {
+    @apply bg-secondary/80 text-secondary-foreground rounded-full px-3 py-1 text-sm font-medium;
+    @apply border border-border/50 hover:border-primary/30 transition-colors cursor-pointer;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounceGentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
 }
