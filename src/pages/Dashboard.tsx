@@ -90,10 +90,7 @@ export default function Dashboard() {
         <div className="max-w-7xl mx-auto">
           <div className="animate-fade-in">
             <h1 className="text-3xl lg:text-5xl font-bold mb-4">
-              {language === 'ml' 
-                ? `സ്വാഗതം, ${farmerName}` 
-                : `Welcome, ${farmerName}`
-              }
+              {t('welcome')}, {farmerName}
             </h1>
             <p className="text-xl lg:text-2xl mb-6 opacity-90">
               {t('todayIs')} {currentDate}
@@ -168,7 +165,7 @@ export default function Dashboard() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <AlertCircle className="h-5 w-5 text-warning" />
-                {language === 'ml' ? 'ഇന്നത്തെ ഉപദേശങ്ങൾ' : "Today's Advisories"}
+                {t('todaysAdvisories')}
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -184,16 +181,13 @@ export default function Dashboard() {
                     variant={advisory.priority === 'high' ? 'destructive' : 'secondary'}
                     className="text-xs"
                   >
-                    {advisory.priority === 'high' 
-                      ? (language === 'ml' ? 'അടിയന്തിരം' : 'Urgent')
-                      : (language === 'ml' ? 'സാധാരണം' : 'Normal')
-                    }
+                    {advisory.priority === 'high' ? t('urgent') : t('normal')}
                   </Badge>
                 </div>
               ))}
               <Link to="/knowledge">
                 <Button variant="outline" className="w-full mt-4">
-                  {language === 'ml' ? 'കൂടുതൽ കാണുക' : 'View More'}
+                  {t('viewMore')}
                 </Button>
               </Link>
             </CardContent>
@@ -223,10 +217,7 @@ export default function Dashboard() {
                       <Clock className="h-4 w-4 text-warning" />
                     )}
                     <span className="text-xs">
-                      {query.status === 'answered' 
-                        ? (language === 'ml' ? 'ഉത്തരം ലഭിച്ചു' : 'Answered')
-                        : (language === 'ml' ? 'പ്രതീക്ഷിക്കുന്നു' : 'Pending')
-                      }
+                      {query.status === 'answered' ? t('answered') : t('pending')}
                     </span>
                   </div>
                 </div>

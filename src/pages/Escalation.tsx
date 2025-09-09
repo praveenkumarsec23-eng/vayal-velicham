@@ -141,7 +141,7 @@ export default function Escalation() {
               {/* Officer Selection */}
               <div>
                 <h3 className="text-lg font-semibold mb-4">
-                  {language === 'ml' ? 'ഓഫീസർ തിരഞ്ഞെടുക്കുക' : 'Select Officer'}
+                  {t('selectOfficer')}
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {mockOfficers.map((officer) => (
@@ -179,10 +179,7 @@ export default function Escalation() {
                                 variant={officer.availability === 'available' ? 'default' : 'secondary'}
                                 className="text-xs ml-2"
                               >
-                                {officer.availability === 'available' 
-                                  ? (language === 'ml' ? 'ലഭ്യം' : 'Available')
-                                  : (language === 'ml' ? 'തിരക്കിൽ' : 'Busy')
-                                }
+                                {officer.availability === 'available' ? t('available') : t('busy')}
                               </Badge>
                             </div>
                           </div>
@@ -199,10 +196,7 @@ export default function Escalation() {
                   {language === 'ml' ? 'വിവരണം' : 'Description'}
                 </label>
                 <Textarea
-                  placeholder={language === 'ml' 
-                    ? 'നിങ്ങളുടെ പ്രശ്നം വിശദമായി വിവരിക്കുക...'
-                    : 'Describe your problem in detail...'
-                  }
+                  placeholder={t('describeProbleInDetail')}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   className="min-h-32"
@@ -216,7 +210,7 @@ export default function Escalation() {
                 className="hero-button w-full flex items-center gap-2"
               >
                 <Send className="h-4 w-4" />
-                {language === 'ml' ? 'എസ്കലേഷൻ സൃഷ്ടിക്കുക' : 'Create Escalation'}
+                {t('createEscalation')}
               </Button>
             </CardContent>
           </Card>
@@ -233,13 +227,10 @@ export default function Escalation() {
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 animate-fade-in">
           <div>
             <h1 className="text-3xl font-bold text-primary mb-2">
-              {language === 'ml' ? 'എസ്കലേഷൻ സിസ്റ്റം' : 'Escalation System'}
+              {t('escalationSystem')}
             </h1>
             <p className="text-muted-foreground">
-              {language === 'ml' 
-                ? 'കൃഷി ഓഫീസർമാരുമായി നേരിട്ട് ബന്ധപ്പെടുക'
-                : 'Connect directly with agriculture officers'
-              }
+              {t('connectWithOfficers')}
             </p>
           </div>
           <Button 
@@ -247,7 +238,7 @@ export default function Escalation() {
             className="hero-button flex items-center gap-2"
           >
             <AlertTriangle className="h-4 w-4" />
-            {language === 'ml' ? 'പുതിയ എസ്കലേഷൻ' : 'New Escalation'}
+            {t('newEscalation')}
           </Button>
         </div>
 
@@ -259,7 +250,7 @@ export default function Escalation() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <MessageSquare className="h-5 w-5" />
-                  {language === 'ml' ? 'എന്റെ എസ്കലേഷനുകൾ' : 'My Escalations'}
+                  {t('myEscalations')}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -272,7 +263,7 @@ export default function Escalation() {
                             {language === 'ml' ? escalation.title : escalation.titleEn}
                           </h3>
                           <p className="text-sm text-muted-foreground mb-2">
-                            {language === 'ml' ? 'ഓഫീസർ:' : 'Officer:'} {escalation.officer}
+                            {t('officer')} {escalation.officer}
                           </p>
                           <div className="flex items-center gap-3">
                             <Badge className={getStatusColor(escalation.status)} variant="secondary">
@@ -301,7 +292,7 @@ export default function Escalation() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <User className="h-5 w-5" />
-                  {language === 'ml' ? 'ഓഫീസർമാർ' : 'Officers'}
+                  {t('officers')}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -322,11 +313,11 @@ export default function Escalation() {
                         <div className="flex gap-2 mt-3">
                           <Button variant="outline" size="sm" className="flex-1">
                             <Phone className="h-3 w-3 mr-1" />
-                            {language === 'ml' ? 'കോൾ' : 'Call'}
+                            {t('call')}
                           </Button>
                           <Button variant="outline" size="sm" className="flex-1">
                             <Mail className="h-3 w-3 mr-1" />
-                            {language === 'ml' ? 'മെയിൽ' : 'Mail'}
+                            {t('mail')}
                           </Button>
                         </div>
                       </div>

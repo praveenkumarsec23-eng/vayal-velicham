@@ -138,26 +138,26 @@ export default function Knowledge() {
               />
               
               <div className="prose prose-sm max-w-none">
-                <h3>{language === 'ml' ? 'വിവരണം' : 'Description'}</h3>
+                <h3>{t('description')}</h3>
                 <p>
                   {language === 'ml' ? selectedArticle.summary : selectedArticle.summaryEn}
                 </p>
                 
-                <h3>{language === 'ml' ? 'ലക്ഷണങ്ങൾ' : 'Symptoms'}</h3>
+                <h3>{t('symptoms')}</h3>
                 <ul>
                   <li>{language === 'ml' ? 'ഇലകളിൽ മഞ്ഞ പുള്ളികൾ' : 'Yellow spots on leaves'}</li>
                   <li>{language === 'ml' ? 'ഇലകൾ വാടുന്നു' : 'Leaves wilt'}</li>
                   <li>{language === 'ml' ? 'വളർച്ച മന്ദഗതിയിലാകുന്നു' : 'Stunted growth'}</li>
                 </ul>
                 
-                <h3>{language === 'ml' ? 'ചികിത്സ' : 'Treatment'}</h3>
+                <h3>{t('treatment')}</h3>
                 <ul>
                   <li>{language === 'ml' ? 'Propiconazole സ്പ്രേ ചെയ്യുക' : 'Spray Propiconazole'}</li>
                   <li>{language === 'ml' ? '15 ദിവസത്തിലൊരിക്കൽ' : 'Once every 15 days'}</li>
                   <li>{language === 'ml' ? 'രോഗബാധിത ഇലകൾ നീക്കം ചെയ്യുക' : 'Remove infected leaves'}</li>
                 </ul>
                 
-                <h3>{language === 'ml' ? 'പ്രതിരോധം' : 'Prevention'}</h3>
+                <h3>{t('prevention')}</h3>
                 <ul>
                   <li>{language === 'ml' ? 'ശരിയായ അകലം പാലിക്കുക' : 'Maintain proper spacing'}</li>
                   <li>{language === 'ml' ? 'മികച്ച വറ്റൽ ഉറപ്പാക്കുക' : 'Ensure good drainage'}</li>
@@ -168,11 +168,11 @@ export default function Knowledge() {
               <div className="flex gap-3 mt-8">
                 <Button className="hero-button flex items-center gap-2">
                   <Download className="h-4 w-4" />
-                  {language === 'ml' ? 'പിഡിഎഫ് ഡൗൺലോഡ്' : 'Download PDF'}
+                  {t('downloadPdf')}
                 </Button>
                 <Button variant="outline" className="flex items-center gap-2">
                   <ExternalLink className="h-4 w-4" />
-                  {language === 'ml' ? 'കൂടുതൽ വിവരങ്ങൾ' : 'More Info'}
+                  {t('moreInfo')}
                 </Button>
               </div>
             </CardContent>
@@ -189,13 +189,10 @@ export default function Knowledge() {
         {/* Header */}
         <div className="text-center mb-8 animate-fade-in">
           <h1 className="text-3xl font-bold text-primary mb-4">
-            {language === 'ml' ? 'കൃഷി അറിവ് കേന്ദ്രം' : 'Agricultural Knowledge Center'}
+            {t('agriculturalKnowledgeCenter')}
           </h1>
           <p className="text-muted-foreground">
-            {language === 'ml' 
-              ? 'കേരള കർഷകർക്കായുള്ള വിശദ കൃഷി ഉപദേശങ്ങൾ'
-              : 'Comprehensive agricultural guidance for Kerala farmers'
-            }
+            {t('comprehensiveGuidance')}
           </p>
         </div>
 
@@ -206,7 +203,7 @@ export default function Knowledge() {
               <div className="relative">
                 <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                 <Input
-                  placeholder={language === 'ml' ? 'രോഗം, കീടം, അല്ലെങ്കിൽ വിള തിരയുക...' : 'Search for diseases, pests, or crops...'}
+                  placeholder={t('searchPlaceholder')}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="pl-10"
@@ -222,7 +219,7 @@ export default function Knowledge() {
                     className="flex items-center gap-2"
                   >
                     <category.icon className="h-4 w-4" />
-                    {language === 'ml' ? category.labelMl : category.labelEn}
+                    {t(category.key === 'all' ? 'all' : category.key)}
                   </Button>
                 ))}
               </div>
@@ -278,13 +275,10 @@ export default function Knowledge() {
             <CardContent>
               <BookOpen className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
               <h3 className="text-lg font-semibold mb-2">
-                {language === 'ml' ? 'കണ്ടെത്താൻ കഴിഞ്ഞില്ല' : 'No Articles Found'}
+                {t('noArticlesFound')}
               </h3>
               <p className="text-muted-foreground">
-                {language === 'ml' 
-                  ? 'വ്ത്യസ്ത കീവേഡുകൾ ഉപയോഗിച്ച് വീണ്ടും ശ്രമിക്കുക'
-                  : 'Try searching with different keywords'
-                }
+                {t('tryDifferentKeywords')}
               </p>
             </CardContent>
           </Card>
