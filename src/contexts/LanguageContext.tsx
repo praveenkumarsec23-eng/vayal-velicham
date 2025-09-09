@@ -57,6 +57,18 @@ const translations = {
     village: 'ഗ്രാമം',
     district: 'ജില്ല',
     plotSize: 'സ്ഥലത്തിന്റെ വലുപ്പം',
+    
+    // Query specific
+    yourAgriculturalQuery: 'നിങ്ങളുടെ കൃഷി ചോദ്യം',
+    askQuestionDescription: 'ടെക്സ്റ്റ്, ഫോട്ടോ അല്ലെങ്കിൽ ശബ്ദം വഴി ചോദ്യം ചോദിക്കാം',
+    recording: 'റെക്കോർഡ് ചെയ്യുന്നു...',
+    stop: 'നിർത്തുക',
+    voice: 'ശബ്ദം',
+    photo: 'ഫോട്ടോ',
+    exampleQuestions: 'ഉദാഹരണ ചോദ്യങ്ങൾ:',
+    aiResponse: 'AI ഉത്തരം',
+    moreDetails: 'കൂടുതൽ വിവരങ്ങൾ',
+    contactOfficer: 'ഓഫീസറിനെ ബന്ധപ്പെടുക',
   },
   en: {
     // Navigation
@@ -106,6 +118,18 @@ const translations = {
     village: 'Village',
     district: 'District',
     plotSize: 'Plot Size',
+    
+    // Query specific
+    yourAgriculturalQuery: 'Your Agricultural Query',
+    askQuestionDescription: 'Ask your question via text, photo, or voice',
+    recording: 'Recording...',
+    stop: 'Stop',
+    voice: 'Voice',
+    photo: 'Photo',
+    exampleQuestions: 'Example Questions:',
+    aiResponse: 'AI Response',
+    moreDetails: 'More Details',
+    contactOfficer: 'Contact Officer',
   },
 };
 

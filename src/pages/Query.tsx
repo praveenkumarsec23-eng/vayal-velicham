@@ -112,13 +112,10 @@ export default function Query() {
         {/* Header */}
         <div className="text-center mb-8 animate-fade-in">
           <h1 className="text-3xl font-bold text-primary mb-4">
-            {language === 'ml' ? 'നിങ്ങളുടെ കൃഷി ചോദ്യം' : 'Your Agricultural Query'}
+            {t('yourAgriculturalQuery')}
           </h1>
           <p className="text-muted-foreground">
-            {language === 'ml' 
-              ? 'ടെക്സ്റ്റ്, ഫോട്ടോ അല്ലെങ്കിൽ ശബ്ദം വഴി ചോദ്യം ചോദിക്കാം'
-              : 'Ask your question via text, photo, or voice'
-            }
+            {t('askQuestionDescription')}
           </p>
         </div>
 
@@ -164,10 +161,10 @@ export default function Query() {
                 />
                 {isRecording && (
                   <div className="absolute inset-0 bg-primary/5 rounded-md flex items-center justify-center">
-                    <div className="flex items-center gap-2 text-primary">
-                      <div className="w-3 h-3 bg-red-500 rounded-full animate-bounce-gentle" />
-                      <span>{language === 'ml' ? 'റെക്കോർഡ് ചെയ്യുന്നു...' : 'Recording...'}</span>
-                    </div>
+                  <div className="flex items-center gap-2 text-primary">
+                    <div className="w-3 h-3 bg-red-500 rounded-full animate-bounce-gentle" />
+                    <span>{t('recording')}</span>
+                  </div>
                   </div>
                 )}
               </div>
@@ -199,17 +196,14 @@ export default function Query() {
                   className="flex items-center gap-2"
                 >
                   {isRecording ? <MicOff className="h-4 w-4" /> : <Mic className="h-4 w-4" />}
-                  {isRecording 
-                    ? (language === 'ml' ? 'നിർത്തുക' : 'Stop')
-                    : (language === 'ml' ? 'ശബ്ദം' : 'Voice')
-                  }
+                  {isRecording ? t('stop') : t('voice')}
                 </Button>
 
                 <label htmlFor="image-upload" className="cursor-pointer">
                   <Button variant="outline" className="flex items-center gap-2" asChild>
                     <span>
                       <Camera className="h-4 w-4" />
-                      {language === 'ml' ? 'ഫോട്ടോ' : 'Photo'}
+                      {t('photo')}
                     </span>
                   </Button>
                 </label>
@@ -240,7 +234,7 @@ export default function Query() {
         <Card className="agricultural-card mb-6">
           <CardHeader>
             <CardTitle className="text-sm text-muted-foreground">
-              {language === 'ml' ? 'ഉദാഹരണ ചോദ്യങ്ങൾ:' : 'Example Questions:'}
+              {t('exampleQuestions')}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -266,7 +260,7 @@ export default function Query() {
             <CardHeader>
               <CardTitle className="text-lg text-primary flex items-center gap-2">
                 <MessageSquare className="h-5 w-5" />
-                {language === 'ml' ? 'AI ഉത്തരം' : 'AI Response'}
+                {t('aiResponse')}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -277,10 +271,10 @@ export default function Query() {
               </div>
               <div className="mt-6 flex gap-3">
                 <Button variant="outline" className="flex-1">
-                  {language === 'ml' ? 'കൂടുതൽ വിവരങ്ങൾ' : 'More Details'}
+                  {t('moreDetails')}
                 </Button>
                 <Button variant="outline" className="flex-1">
-                  {language === 'ml' ? 'ഓഫീസറിനെ ബന്ധപ്പെടുക' : 'Contact Officer'}
+                  {t('contactOfficer')}
                 </Button>
               </div>
             </CardContent>
