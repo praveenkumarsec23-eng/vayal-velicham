@@ -21,11 +21,11 @@ All colors MUST be HSL for consistent theming.
     --popover: 0 0% 100%;
     --popover-foreground: 145 8% 15%;
 
-    /* Green Agricultural Primary - Kerala's lush fields */
-    --primary: 145 63% 42%;
+    /* Black Primary - Professional agricultural theme */
+    --primary: 0 0% 0%;
     --primary-foreground: 0 0% 98%;
-    --primary-glow: 145 63% 55%;
-    --primary-dark: 145 63% 35%;
+    --primary-glow: 0 0% 15%;
+    --primary-dark: 0 0% 0%;
 
     /* Earth Secondary - Rich soil tones */
     --secondary: 38 32% 92%;
@@ -49,7 +49,7 @@ All colors MUST be HSL for consistent theming.
 
     --border: 38 20% 88%;
     --input: 38 20% 88%;
-    --ring: 145 63% 42%;
+    --ring: 0 0% 0%;
 
     --radius: 1rem;
 
@@ -98,9 +98,9 @@ All colors MUST be HSL for consistent theming.
     --popover: 145 12% 10%;
     --popover-foreground: 38 20% 92%;
 
-    --primary: 145 63% 55%;
-    --primary-foreground: 145 12% 8%;
-    --primary-glow: 145 63% 65%;
+    --primary: 0 0% 15%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 0 0% 30%;
 
     --secondary: 145 8% 15%;
     --secondary-foreground: 38 20% 92%;
@@ -117,7 +117,7 @@ All colors MUST be HSL for consistent theming.
 
     --border: 145 8% 18%;
     --input: 145 8% 18%;
-    --ring: 145 63% 55%;
+    --ring: 0 0% 15%;
     
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
     --gradient-hero: linear-gradient(135deg, hsl(145 63% 35%), hsl(120 45% 25%));
